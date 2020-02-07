@@ -28,7 +28,7 @@ public class recyclerview_adapter extends RecyclerView.Adapter<recyclerview_adap
     @Override
     public void onBindViewHolder(@NonNull viewHolder holder, int position) {
         holder.imgButton.setImageResource(arr[position]);
-        holder.txtView.setText(arr[position ]);
+        holder.txtView.setText(arr[position]);
 
 
     }
@@ -40,7 +40,7 @@ public class recyclerview_adapter extends RecyclerView.Adapter<recyclerview_adap
 
     public class viewHolder extends RecyclerView.ViewHolder {
 
-        ImageButton imgButton;
+        ImageView imgButton;
         TextView txtView;
 
         public viewHolder(@NonNull View itemView) {
