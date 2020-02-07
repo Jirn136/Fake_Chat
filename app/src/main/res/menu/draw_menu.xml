@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_addgroup"
+            android:icon="@drawable/add_group"
+            android:title="@string/group" />
+        <item
+            android:id="@+id/nav_broadcast"
+            android:icon="@drawable/broadcast"
+            android:title="@string/broadcast" />
+        <item
+            android:id="@+id/nav_search"
+            android:icon="@drawable/search"
+            android:title="@string/search" />
+        <item
+            android:id="@+id/nav_settings"
+            android:icon="@drawable/settings"
+            android:title="@string/settings" />
+        <item
+            android:id="@+id/nav_web"
+            android:icon="@drawable/web"
+            android:title="@string/web" />
+        <item
+            android:id="@+id/privacy"
+            android:icon="@drawable/lock"
+            android:title="@string/privacy" />
+    </group>
+
+
+    <item android:title="@string/about_help">
+        <menu>
+            <item
+                android:id="@+id/about"
+                android:icon="@drawable/info"
+                android:title="@string/about" />
+            <item
+                android:id="@+id/help"
+                android:icon="@drawable/help"
+                android:title="@string/help" />
+
+        </menu>
+    </item>
+</menu>
