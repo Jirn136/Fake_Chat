@@ -12,9 +12,13 @@ import androidx.recyclerview.widget.RecyclerView;
 
 public class recyclerview_adapter extends RecyclerView.Adapter<recyclerview_adapter.viewHolder> {
     int arr[];
-
+    private names[] names;
     public recyclerview_adapter(int[] arr) {
         this.arr = arr;
+    }
+
+    public recyclerview_adapter(com.example.fakechat.names[] names) {
+        this.names = names;
     }
 
     @NonNull
