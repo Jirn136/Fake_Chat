@@ -6,24 +6,31 @@
     android:orientation="vertical">
 
 
-        <de.hdodenhof.circleimageview.CircleImageView
-            xmlns:app="http://schemas.android.com/apk/res-auto"
-            android:id="@+id/imgProfile"
-            android:layout_width="75dp"
-            android:layout_height="75dp"
-            android:src="@drawable/jessy"
-            android:layout_marginStart="5dp"
-            app:civ_border_width="2dp"
-            app:civ_border_color="#FF000000"/>
+       <LinearLayout
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+               android:orientation="vertical"
+           android:layout_marginTop="10dp">
+
+               <de.hdodenhof.circleimageview.CircleImageView
+                   xmlns:app="http://schemas.android.com/apk/res-auto"
+                   android:id="@+id/imgProfile"
+                   android:layout_width="75dp"
+                   android:layout_height="75dp"
+                   android:src="@drawable/jessy"
+                   android:layout_marginStart="5dp"
+                   app:civ_border_width="2dp"
+                   app:civ_border_color="#FF000000"/>
 
 
-        <TextView
-            android:id="@+id/txtName"
-            android:layout_width="wrap_content"
-            android:layout_height="0dp"
-            android:padding="2dp"
-            android:text="John"
-            android:layout_marginStart="40dp"
-            android:layout_weight=".15"
-            android:textStyle="bold"/>
+               <TextView
+                   android:id="@+id/txtName"
+                   android:layout_width="wrap_content"
+                   android:layout_height="0dp"
+                   android:padding="2dp"
+                   android:text="John"
+                   android:layout_gravity="center"
+                   android:layout_weight=".15"
+                   android:textStyle="bold"/>
+       </LinearLayout>
 </LinearLayout>
