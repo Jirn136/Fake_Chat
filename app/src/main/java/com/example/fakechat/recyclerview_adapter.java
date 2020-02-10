@@ -10,15 +10,14 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-public class recyclerview_adapter extends RecyclerView.Adapter<recyclerview_adapter.viewHolder> {
-    int arr[];
-    private names[] names;
-    public recyclerview_adapter(int[] arr) {
-        this.arr = arr;
-    }
+import java.util.ArrayList;
 
-    public recyclerview_adapter(com.example.fakechat.names[] names) {
-        this.names = names;
+public class recyclerview_adapter extends RecyclerView.Adapter<recyclerview_adapter.viewHolder> {
+
+    private ArrayList<names> chatList;
+
+    public recyclerview_adapter(ArrayList<names> chatList) {
+        this.chatList = chatList;
     }
 
     @NonNull
@@ -31,15 +30,15 @@ public class recyclerview_adapter extends RecyclerView.Adapter<recyclerview_adap
 
     @Override
     public void onBindViewHolder(@NonNull viewHolder holder, int position) {
-        holder.imgButton.setImageResource(arr[position]);
-        holder.txtView.setText(arr[position]);
+        holder.imgButton.setImageResource(chatList.get(position).getImgId());
+        holder.txtView.setText(chatList.get(position).getNames());
 
 
     }
 
     @Override
     public int getItemCount() {
-        return arr.length;
+        return chatList.size();
     }
 
     public class viewHolder extends RecyclerView.ViewHolder {
