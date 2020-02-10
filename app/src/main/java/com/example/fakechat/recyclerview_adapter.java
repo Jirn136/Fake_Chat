@@ -45,7 +45,8 @@ public class recyclerview_adapter extends RecyclerView.Adapter<recyclerview_adap
         holder.imgButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(a, "Clicked "+chatList.get(position).getNames(), Toast.LENGTH_SHORT).show();            }
+                Toast.makeText(a, "You clicked "+chatList.get(position).getNames(), Toast.LENGTH_SHORT).show();
+            }
         });
 
 
