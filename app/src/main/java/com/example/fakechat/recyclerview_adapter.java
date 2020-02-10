@@ -1,13 +1,19 @@
 package com.example.fakechat;
 
+import android.app.Activity;
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
+import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
@@ -15,9 +21,11 @@ import java.util.ArrayList;
 public class recyclerview_adapter extends RecyclerView.Adapter<recyclerview_adapter.viewHolder> {
 
     private ArrayList<names> chatList;
+    private Activity a;
 
-    public recyclerview_adapter(ArrayList<names> chatList) {
+    public recyclerview_adapter(Activity a,ArrayList<names> chatList) {
         this.chatList = chatList;
+        this.a=a;
     }
 
     @NonNull
@@ -29,9 +37,16 @@ public class recyclerview_adapter extends RecyclerView.Adapter<recyclerview_adap
     }
 
     @Override
-    public void onBindViewHolder(@NonNull viewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull final viewHolder holder, final int position) {
         holder.imgButton.setImageResource(chatList.get(position).getImgId());
         holder.txtView.setText(chatList.get(position).getNames());
+
+
+        holder.imgButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(a, "Clicked "+chatList.get(position).getNames(), Toast.LENGTH_SHORT).show();            }
+        });
 
 
     }
@@ -53,4 +68,5 @@ public class recyclerview_adapter extends RecyclerView.Adapter<recyclerview_adap
             txtView = itemView.findViewById(R.id.txtName);
         }
     }
+
 }

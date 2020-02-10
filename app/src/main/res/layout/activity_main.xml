@@ -27,13 +27,14 @@
         <FrameLayout
             android:id="@+id/frameLayout"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:elevation="0dp">
 
-<!--            <com.google.android.material.appbar.AppBarLayout-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="50dp"-->
-<!--                android:gravity="center"-->
-<!--                app:elevation="0dp"/>-->
+            <com.google.android.material.appbar.AppBarLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="50dp"
+                app:elevation="0dp"/>
 
             <com.google.android.material.tabs.TabLayout
                 android:id="@+id/tabLayout"

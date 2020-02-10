@@ -43,13 +43,14 @@ public class frag_chats extends Fragment {
         chatList.add(new names("Ryuk", R.drawable.ryuk));
         chatList.add(new names("Maxim", R.drawable.maxim));
         chatList.add(new names("John", R.drawable.john));
+        chatList.add(new names("Heath",R.drawable.joker));
     }
 
     private void recyclerViewProcess() {
         recyclerView = view.findViewById(R.id.recyclerView);
-        layoutManager = new GridLayoutManager(getContext(), 5);
+        layoutManager = new GridLayoutManager(getContext(), 4);
         recyclerView.setLayoutManager(layoutManager);
-        adapter = new recyclerview_adapter(chatList);
+        adapter = new recyclerview_adapter(getActivity(),chatList);
         recyclerView.setAdapter(adapter);
         recyclerView.setHasFixedSize(true);
     }

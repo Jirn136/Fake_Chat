@@ -18,4 +18,5 @@
     <string name="chats">Chats</string>
     <string name="Groups">Groups</string>
     <string name="calls">Calls</string>
+    <string name="typing">Enter your content..</string>
 </resources>
