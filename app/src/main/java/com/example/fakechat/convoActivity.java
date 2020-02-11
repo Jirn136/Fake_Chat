@@ -8,10 +8,15 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
+import android.view.Window;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.PopupMenu;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.material.appbar.AppBarLayout;
 
@@ -28,6 +33,8 @@ public class convoActivity extends AppCompatActivity implements View.OnClickList
     private ImageView imgsProfile,video,audio,menu;
     private TextView txtNameCard;
     private ImageButton backButton,btnSend;
+    private String myList;
+    private EditText edtMessage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +48,7 @@ public class convoActivity extends AppCompatActivity implements View.OnClickList
         txtNameCard=findViewById(R.id.namesCard);
         backButton=findViewById(R.id.backButton);
         btnSend=findViewById(R.id.btnSend);
+        edtMessage=findViewById(R.id.edtMessage);
 
         nameId= Objects.requireNonNull(getIntent().getExtras()).getString("name");
         imgId=getIntent().getExtras().getInt("image");
@@ -58,6 +66,8 @@ public class convoActivity extends AppCompatActivity implements View.OnClickList
 
         txtNameCard.setText(nameId);
         imgsProfile.setImageResource(imgId);
+
+
 
 
     }
@@ -83,17 +93,50 @@ public class convoActivity extends AppCompatActivity implements View.OnClickList
 
     @Override
     public void onClick(View v) {
+        myList=edtMessage.getText().toString();
         switch(v.getId()){
             case R.id.video:
+                Toast.makeText(this, "Video Calling on Progress", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.audio:
+                Toast.makeText(this, "Audio Calling on Progress", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.menu:
+                PopupMenu popupMenu= new PopupMenu(this,v);
+                popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+                    @Override
+                    public boolean onMenuItemClick(MenuItem item) {
+                       switch (item.getItemId()){
+                           case R.id.emailChat:
+                               Toast.makeText(convoActivity.this, "Email chat is done", Toast.LENGTH_SHORT).show();
+                               break;
+                           case R.id.clearChat:
+                               Toast.makeText(convoActivity.this, "Clearchat is done", Toast.LENGTH_SHORT).show();
+                               break;
+                           case R.id.block:
+                               Toast.makeText(convoActivity.this, "Blocked the User", Toast.LENGTH_SHORT).show();
+
+                               break;
+                       }
+                        return false;
+                    }
+                });
+                popupMenu.inflate(R.menu.inside_chat);
+                popupMenu.show();
                 break;
             case R.id.backButton:
                 finish();
                 break;
             case R.id.btnSend:
+                if(edtMessage.getText().toString().isEmpty()){
+                    btnSend.setEnabled(false);
+                    Toast.makeText(this,"Enter Content",Toast.LENGTH_SHORT).show();
+                }else{
+                    btnSend.setEnabled(true);
+                    edtMessage.setText("");
+                    cons.add(new ConvoCons(myList,"ok"));
+                    adapter.notifyDataSetChanged();
+                }
                 break;
         }
     }

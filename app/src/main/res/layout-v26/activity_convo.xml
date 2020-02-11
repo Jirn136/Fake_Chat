@@ -27,7 +27,8 @@
           android:src="@drawable/back"
           android:background="@null"
           android:layout_gravity="center"
-          android:contentDescription="@string/back"/>
+          android:contentDescription="@string/back"
+          android:layout_marginStart="10dp"/>
 
       <de.hdodenhof.circleimageview.CircleImageView
           android:id="@+id/imgsProfile"
@@ -82,7 +83,7 @@
             android:layout_height="35dp"
             android:src="@drawable/menu"
             android:background="@null"
-            android:layout_marginStart="40dp"
+            android:layout_marginStart="30dp"
             android:layout_marginTop="22dp"
             android:contentDescription="@string/video_call"
             android:layout_weight="1"/>
