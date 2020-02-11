@@ -45,6 +45,21 @@ public class frag_chats extends Fragment {
         chatList.add(new names("Maxim", R.drawable.maxim));
         chatList.add(new names("John", R.drawable.john));
         chatList.add(new names("Heath",R.drawable.joker));
+        chatList.add(new names("Judy",R.drawable.ironman));
+        chatList.add(new names("Steyn",R.drawable.steyn));
+        chatList.add(new names("Zorro",R.drawable.zorro));
+        chatList.add(new names("Cena",R.drawable.cena));
+        chatList.add(new names("Starc",R.drawable.starc));
+        chatList.add(new names("Kane",R.drawable.kane));
+        chatList.add(new names("Hari",R.drawable.hari));
+        chatList.add(new names("Flash",R.drawable.flash));
+        chatList.add(new names("Barry",R.drawable.flash));
+        chatList.add(new names("Light",R.drawable.light));
+        chatList.add(new names("Stephan Amell",R.drawable.amell));
+        chatList.add(new names("Hugh",R.drawable.hugh));
+
+
+
     }
 
     private void recyclerViewProcess() {

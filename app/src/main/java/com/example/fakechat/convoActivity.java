@@ -129,10 +129,10 @@ public class convoActivity extends AppCompatActivity implements View.OnClickList
                 break;
             case R.id.btnSend:
                 if(edtMessage.getText().toString().isEmpty()){
-                    btnSend.setEnabled(false);
+
                     Toast.makeText(this,"Enter Content",Toast.LENGTH_SHORT).show();
                 }else{
-                    btnSend.setEnabled(true);
+
                     edtMessage.setText("");
                     cons.add(new ConvoCons(myList,"ok"));
                     adapter.notifyDataSetChanged();

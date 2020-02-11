@@ -56,35 +56,35 @@
         <ImageView
             android:id="@+id/video"
             android:layout_width="0dp"
-            android:layout_height="25dp"
+            android:layout_height="35dp"
             android:src="@drawable/video"
             android:background="@null"
             android:scaleType="centerInside"
-            android:layout_marginStart="65dp"
-            android:layout_marginTop="25dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="20dp"
             android:contentDescription="@string/video_call"
             android:layout_weight="1"/>
 
         <ImageView
             android:id="@+id/audio"
             android:layout_width="0dp"
-            android:layout_height="20dp"
+            android:layout_height="35dp"
             android:src="@drawable/phone"
             android:background="@null"
             android:scaleType="centerInside"
-            android:layout_marginStart="55dp"
-            android:layout_marginTop="28dp"
+            android:layout_marginStart="45dp"
+            android:layout_marginTop="20dp"
             android:contentDescription="@string/audio_call"
             android:layout_weight="1"/>
 
         <ImageView
             android:id="@+id/menu"
             android:layout_width="0dp"
-            android:layout_height="35dp"
+            android:layout_height="40dp"
             android:src="@drawable/menu"
             android:background="@null"
-            android:layout_marginStart="30dp"
-            android:layout_marginTop="22dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="20dp"
             android:contentDescription="@string/video_call"
             android:layout_weight="1"/>
 
