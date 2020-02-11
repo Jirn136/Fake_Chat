@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/emailChat"
+        android:title="@string/email_chat"/>
+    <item
+        android:id="@+id/clearChat"
+        android:title="@string/clear_chat"/>
+    <item
+        android:id="@+id/block"
+        android:title="@string/block"/>
+
+
+</menu>

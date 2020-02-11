@@ -1,5 +1,6 @@
 package com.example.fakechat;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -53,6 +54,17 @@ public class frag_chats extends Fragment {
         adapter = new recyclerview_adapter(getActivity(),chatList);
         recyclerView.setAdapter(adapter);
         recyclerView.setHasFixedSize(true);
+
+        adapter.setListener(new recyclerview_adapter.onitemclickListener() {
+            @Override
+            public void onItemClick(int position) {
+                Intent i= new Intent(getContext(),convoActivity.class);
+                names item=chatList.get(position);
+                i.putExtra("name",item.getNames());
+                i.putExtra("image",item.getImgId());
+                startActivity(i);
+            }
+        });
     }
 
 }

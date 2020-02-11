@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".convoActivity">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/background_image"
+        android:scaleType="fitXY"
+        android:alpha=".4"/>
+
+
+  <LinearLayout
+      android:id="@+id/topLayout"
+      android:layout_width="wrap_content"
+      android:layout_height="60dp"
+      android:orientation="horizontal"
+      android:layout_marginTop="8dp">
+
+      <ImageButton
+          android:id="@+id/backButton"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:src="@drawable/back"
+          android:background="@null"
+          android:layout_gravity="center"
+          android:contentDescription="@string/back"/>
+
+      <de.hdodenhof.circleimageview.CircleImageView
+          android:id="@+id/imgsProfile"
+          android:layout_width="55dp"
+          android:layout_height="55dp"
+          android:src="@drawable/jessy"
+          android:layout_marginStart="20dp"/>
+      <TextView
+          android:id="@+id/namesCard"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="@string/chats"
+          android:layout_gravity="center"
+          android:layout_marginStart="20dp"
+          android:textColor="#000"
+          android:textStyle="bold"
+         />
+  </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_toEndOf="@id/topLayout">
+
+        <ImageView
+            android:id="@+id/video"
+            android:layout_width="0dp"
+            android:layout_height="25dp"
+            android:src="@drawable/video"
+            android:background="@null"
+            android:scaleType="centerInside"
+            android:layout_marginStart="65dp"
+            android:layout_marginTop="25dp"
+            android:contentDescription="@string/video_call"
+            android:layout_weight="1"/>
+
+        <ImageView
+            android:id="@+id/audio"
+            android:layout_width="0dp"
+            android:layout_height="20dp"
+            android:src="@drawable/phone"
+            android:background="@null"
+            android:scaleType="centerInside"
+            android:layout_marginStart="55dp"
+            android:layout_marginTop="28dp"
+            android:contentDescription="@string/audio_call"
+            android:layout_weight="1"/>
+
+        <ImageView
+            android:id="@+id/menu"
+            android:layout_width="0dp"
+            android:layout_height="35dp"
+            android:src="@drawable/menu"
+            android:background="@null"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="22dp"
+            android:contentDescription="@string/video_call"
+            android:layout_weight="1"/>
+
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/divider2"
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:layout_below="@id/topLayout"
+        android:background="?android:attr/listDivider"/>
+
+    <LinearLayout
+        android:id="@+id/cLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_below="@id/topLayout"
+        android:layout_marginTop="5dp">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/chat_recycler"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight=".85"/>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/edtMessage"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight=".85"
+            android:background="@drawable/edittext_background"
+            android:hint="@string/typing"
+            android:autofillHints="@string/typing"
+            android:inputType="none"/>
+
+        <ImageButton
+            android:id="@+id/btnSend"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight=".15"
+            android:background="@null"
+            android:contentDescription="@string/chats"
+            android:src="@drawable/send" />
+    </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>

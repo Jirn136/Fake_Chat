@@ -9,4 +9,10 @@
         android:width="3dp"
         android:color="#d3d3d3"/>
 
+    <padding
+        android:right="5dp"
+        android:left="15dp"
+        android:top="5dp"
+        android:bottom="5dp"/>
+
 </shape>

@@ -19,4 +19,13 @@
     <string name="Groups">Groups</string>
     <string name="calls">Calls</string>
     <string name="typing">Enter your content..</string>
+    <string name="audio">Audio</string>
+    <string name="video">Video</string>
+    <string name="email_chat">Email Chat</string>
+    <string name="clear_chat">Clear Chat</string>
+    <string name="block">Block</string>
+
+    <string name="video_call">Video</string>
+    <string name="audio_call">Audio</string>
+    <string name="back">back</string>
 </resources>

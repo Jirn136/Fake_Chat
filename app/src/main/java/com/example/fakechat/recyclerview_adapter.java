@@ -22,10 +22,15 @@ public class recyclerview_adapter extends RecyclerView.Adapter<recyclerview_adap
 
     private ArrayList<names> chatList;
     private Activity a;
+    private onitemclickListener listener;
 
-    public recyclerview_adapter(Activity a,ArrayList<names> chatList) {
+    public void setListener(onitemclickListener listener) {
+        this.listener = listener;
+    }
+
+    public recyclerview_adapter(Activity a, ArrayList<names> chatList) {
         this.chatList = chatList;
-        this.a=a;
+        this.a = a;
     }
 
     @NonNull
@@ -40,15 +45,6 @@ public class recyclerview_adapter extends RecyclerView.Adapter<recyclerview_adap
     public void onBindViewHolder(@NonNull final viewHolder holder, final int position) {
         holder.imgButton.setImageResource(chatList.get(position).getImgId());
         holder.txtView.setText(chatList.get(position).getNames());
-
-
-        holder.imgButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(a, "You clicked "+chatList.get(position).getNames(), Toast.LENGTH_SHORT).show();
-            }
-        });
-
 
     }
 
@@ -67,7 +63,23 @@ public class recyclerview_adapter extends RecyclerView.Adapter<recyclerview_adap
 
             imgButton = itemView.findViewById(R.id.imgProfile);
             txtView = itemView.findViewById(R.id.txtName);
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if(listener!=null){
+                        int position= getAdapterPosition();
+                        if(position!=RecyclerView.NO_POSITION){
+                            listener.onItemClick(position);
+                        }
+                    }
+                }
+            });
         }
+    }
+
+    public interface onitemclickListener {
+        void onItemClick(int position);
     }
 
 }
