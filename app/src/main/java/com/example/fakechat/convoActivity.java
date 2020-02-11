@@ -76,6 +76,7 @@ public class convoActivity extends AppCompatActivity implements View.OnClickList
         adapter = new ConvoRecyclerview(cons);
         rv.setAdapter(adapter);
         rv.setHasFixedSize(true);
+
     }
 
     private void convo() {
@@ -132,7 +133,13 @@ public class convoActivity extends AppCompatActivity implements View.OnClickList
 
                     edtMessage.setText("");
                     cons.add(new ConvoCons(myList, "ok"));
-                    adapter.notifyDataSetChanged();
+                    rv.post(new Runnable() {
+                        @Override
+                        public void run() {
+                            rv.smoothScrollToPosition(adapter.getItemCount()-1);
+                            adapter.notifyDataSetChanged();
+                        }
+                    });
                 }
                 break;
         }
