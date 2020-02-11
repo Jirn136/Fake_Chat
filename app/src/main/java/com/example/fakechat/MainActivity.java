@@ -27,25 +27,25 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void navigationDrawer(){
-        Toolbar toolbar= findViewById(R.id.toolBar);
+    public void navigationDrawer() {
+        Toolbar toolbar = findViewById(R.id.toolBar);
         setSupportActionBar(toolbar);
-        drawerLayout= findViewById(R.id.drawLayout);
+        drawerLayout = findViewById(R.id.drawLayout);
 
-        ActionBarDrawerToggle toggle= new ActionBarDrawerToggle(this,drawerLayout,toolbar,R.string.draw_open,R.string.draw_close);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.draw_open, R.string.draw_close);
         drawerLayout.addDrawerListener(toggle);
         toggle.syncState();
     }
 
-    public void tabFrags(){
+    public void tabFrags() {
         TabLayout tabLayout = findViewById(R.id.tabLayout);
         ViewPager viewPager = findViewById(R.id.viewPager);
 
-        viewPagerAdapter adapter= new viewPagerAdapter(getSupportFragmentManager());
+        viewPagerAdapter adapter = new viewPagerAdapter(getSupportFragmentManager());
 
-        adapter.addFragment(new frag_chats(),"Chats");
-        adapter.addFragment(new frag_group(),"Groups");
-        adapter.addFragment(new frag_calls(),"Calls");
+        adapter.addFragment(new frag_chats(), "Chats");
+        adapter.addFragment(new frag_group(), "Groups");
+        adapter.addFragment(new frag_calls(), "Calls");
 
         viewPager.setAdapter(adapter);
         tabLayout.setupWithViewPager(viewPager);
@@ -53,9 +53,9 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        if(drawerLayout.isDrawerOpen(GravityCompat.START)){
+        if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
             drawerLayout.closeDrawer(GravityCompat.START);
-        }else{
+        } else {
             super.onBackPressed();
         }
     }

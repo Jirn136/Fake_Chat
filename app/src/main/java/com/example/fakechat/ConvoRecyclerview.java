@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 
 public class ConvoRecyclerview extends RecyclerView.Adapter<myViewHolder> {
-    ArrayList<ConvoCons>cons;
+    ArrayList<ConvoCons> cons;
 
     public ConvoRecyclerview(ArrayList<ConvoCons> cons) {
         this.cons = cons;
@@ -20,8 +20,8 @@ public class ConvoRecyclerview extends RecyclerView.Adapter<myViewHolder> {
     @NonNull
     @Override
     public myViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View v= LayoutInflater.from(parent.getContext()).inflate(R.layout.convo_viewhold,parent,false);
-        myViewHolder viewHolder=new myViewHolder(v);
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.convo_viewhold, parent, false);
+        myViewHolder viewHolder = new myViewHolder(v);
         return viewHolder;
     }
 
@@ -38,12 +38,12 @@ public class ConvoRecyclerview extends RecyclerView.Adapter<myViewHolder> {
     }
 }
 
-class myViewHolder extends RecyclerView.ViewHolder{
-     TextView incoming,outgoing;
+class myViewHolder extends RecyclerView.ViewHolder {
+    TextView incoming, outgoing;
 
     myViewHolder(@NonNull View itemView) {
         super(itemView);
-        incoming=itemView.findViewById(R.id.incoming);
-        outgoing=itemView.findViewById(R.id.outgoing);
+        incoming = itemView.findViewById(R.id.incoming);
+        outgoing = itemView.findViewById(R.id.outgoing);
     }
 }

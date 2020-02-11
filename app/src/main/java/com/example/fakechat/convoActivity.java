@@ -27,12 +27,12 @@ public class convoActivity extends AppCompatActivity implements View.OnClickList
     private RecyclerView rv;
     private RecyclerView.LayoutManager lm;
     private ConvoRecyclerview adapter;
-    private ArrayList<ConvoCons> cons= new ArrayList<>();
+    private ArrayList<ConvoCons> cons = new ArrayList<>();
     private int imgId;
     private String nameId;
-    private ImageView imgsProfile,video,audio,menu;
+    private ImageView imgsProfile, video, audio, menu;
     private TextView txtNameCard;
-    private ImageButton backButton,btnSend;
+    private ImageButton backButton, btnSend;
     private String myList;
     private EditText edtMessage;
 
@@ -41,17 +41,17 @@ public class convoActivity extends AppCompatActivity implements View.OnClickList
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_convo);
 
-        imgsProfile=findViewById(R.id.imgsProfile);
-        video=findViewById(R.id.video);
-        audio=findViewById(R.id.audio);
-        menu=findViewById(R.id.menu);
-        txtNameCard=findViewById(R.id.namesCard);
-        backButton=findViewById(R.id.backButton);
-        btnSend=findViewById(R.id.btnSend);
-        edtMessage=findViewById(R.id.edtMessage);
+        imgsProfile = findViewById(R.id.imgsProfile);
+        video = findViewById(R.id.video);
+        audio = findViewById(R.id.audio);
+        menu = findViewById(R.id.menu);
+        txtNameCard = findViewById(R.id.namesCard);
+        backButton = findViewById(R.id.backButton);
+        btnSend = findViewById(R.id.btnSend);
+        edtMessage = findViewById(R.id.edtMessage);
 
-        nameId= Objects.requireNonNull(getIntent().getExtras()).getString("name");
-        imgId=getIntent().getExtras().getInt("image");
+        nameId = Objects.requireNonNull(getIntent().getExtras()).getString("name");
+        imgId = getIntent().getExtras().getInt("image");
 
 
         recyclerContents();
@@ -68,33 +68,30 @@ public class convoActivity extends AppCompatActivity implements View.OnClickList
         imgsProfile.setImageResource(imgId);
 
 
-
-
     }
 
     private void recyclerContents() {
-        rv=findViewById(R.id.chat_recycler);
+        rv = findViewById(R.id.chat_recycler);
         rv.setLayoutManager(new LinearLayoutManager(this));
-        adapter=new ConvoRecyclerview(cons);
+        adapter = new ConvoRecyclerview(cons);
         rv.setAdapter(adapter);
         rv.setHasFixedSize(true);
     }
 
     private void convo() {
 
-        cons.add(new ConvoCons("Hi....","Hello.."));
-        cons.add(new ConvoCons("How are you","Im fine. What about you"));
-        cons.add(new ConvoCons("Fine","Shall we go for a Hangout?"));
-        cons.add(new ConvoCons("When?","Sometimes you wish!"));
-        cons.add(new ConvoCons("I'll tell you later about that","chill"));
+        cons.add(new ConvoCons("Hi....", "Hello.."));
+        cons.add(new ConvoCons("How are you", "Im fine. What about you"));
+        cons.add(new ConvoCons("Fine", "Shall we go for a Hangout?"));
+        cons.add(new ConvoCons("When?", "Sometimes you wish!"));
+        cons.add(new ConvoCons("I'll tell you later about that", "chill"));
     }
-
 
 
     @Override
     public void onClick(View v) {
-        myList=edtMessage.getText().toString();
-        switch(v.getId()){
+        myList = edtMessage.getText().toString();
+        switch (v.getId()) {
             case R.id.video:
                 Toast.makeText(this, "Video Calling on Progress", Toast.LENGTH_SHORT).show();
                 break;
@@ -102,22 +99,22 @@ public class convoActivity extends AppCompatActivity implements View.OnClickList
                 Toast.makeText(this, "Audio Calling on Progress", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.menu:
-                PopupMenu popupMenu= new PopupMenu(this,v);
+                PopupMenu popupMenu = new PopupMenu(this, v);
                 popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
                     @Override
                     public boolean onMenuItemClick(MenuItem item) {
-                       switch (item.getItemId()){
-                           case R.id.emailChat:
-                               Toast.makeText(convoActivity.this, "Email chat is done", Toast.LENGTH_SHORT).show();
-                               break;
-                           case R.id.clearChat:
-                               Toast.makeText(convoActivity.this, "Clearchat is done", Toast.LENGTH_SHORT).show();
-                               break;
-                           case R.id.block:
-                               Toast.makeText(convoActivity.this, "Blocked the User", Toast.LENGTH_SHORT).show();
+                        switch (item.getItemId()) {
+                            case R.id.emailChat:
+                                Toast.makeText(convoActivity.this, "Email chat is done", Toast.LENGTH_SHORT).show();
+                                break;
+                            case R.id.clearChat:
+                                Toast.makeText(convoActivity.this, "Clearchat is done", Toast.LENGTH_SHORT).show();
+                                break;
+                            case R.id.block:
+                                Toast.makeText(convoActivity.this, "Blocked the User", Toast.LENGTH_SHORT).show();
 
-                               break;
-                       }
+                                break;
+                        }
                         return false;
                     }
                 });
@@ -128,13 +125,13 @@ public class convoActivity extends AppCompatActivity implements View.OnClickList
                 finish();
                 break;
             case R.id.btnSend:
-                if(edtMessage.getText().toString().isEmpty()){
+                if (edtMessage.getText().toString().isEmpty()) {
 
-                    Toast.makeText(this,"Enter Content",Toast.LENGTH_SHORT).show();
-                }else{
+                    Toast.makeText(this, "Enter Content", Toast.LENGTH_SHORT).show();
+                } else {
 
                     edtMessage.setText("");
-                    cons.add(new ConvoCons(myList,"ok"));
+                    cons.add(new ConvoCons(myList, "ok"));
                     adapter.notifyDataSetChanged();
                 }
                 break;

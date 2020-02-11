@@ -11,13 +11,14 @@ import androidx.fragment.app.Fragment;
 
 public class frag_calls extends Fragment {
     View view;
+
     public frag_calls() {
     }
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        view=inflater.inflate(R.layout.calls,container,false);
+        view = inflater.inflate(R.layout.calls, container, false);
         return view;
     }
 }
