@@ -28,4 +28,8 @@
     <string name="video_call">Video</string>
     <string name="audio_call">Audio</string>
     <string name="back">back</string>
+    <string name="today">Today</string>
+    <string name="background">Background</string>
+    <string name="username">Username</string>
+    <string name="status">Status</string>
 </resources>

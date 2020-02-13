@@ -28,12 +28,6 @@ public class convoActivity extends AppCompatActivity implements View.OnClickList
     private RecyclerView.LayoutManager lm;
     private ConvoRecyclerview adapter;
     private ArrayList<ConvoCons> cons = new ArrayList<>();
-    private int imgId;
-    private String nameId;
-    private ImageView imgsProfile, video, audio, menu;
-    private TextView txtNameCard;
-    private ImageButton backButton, btnSend;
-    private String myList;
     private EditText edtMessage;
 
     @Override
@@ -41,17 +35,17 @@ public class convoActivity extends AppCompatActivity implements View.OnClickList
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_convo);
 
-        imgsProfile = findViewById(R.id.imgsProfile);
-        video = findViewById(R.id.video);
-        audio = findViewById(R.id.audio);
-        menu = findViewById(R.id.menu);
-        txtNameCard = findViewById(R.id.namesCard);
-        backButton = findViewById(R.id.backButton);
-        btnSend = findViewById(R.id.btnSend);
+        ImageView imgsProfile = findViewById(R.id.imgsProfile);
+        ImageView video = findViewById(R.id.video);
+        ImageView audio = findViewById(R.id.audio);
+        ImageView menu = findViewById(R.id.menu);
+        TextView txtNameCard = findViewById(R.id.namesCard);
+        ImageButton backButton = findViewById(R.id.backButton);
+        ImageButton btnSend = findViewById(R.id.btnSend);
         edtMessage = findViewById(R.id.edtMessage);
 
-        nameId = Objects.requireNonNull(getIntent().getExtras()).getString("name");
-        imgId = getIntent().getExtras().getInt("image");
+        String nameId = Objects.requireNonNull(getIntent().getExtras()).getString("name");
+        int imgId = getIntent().getExtras().getInt("image");
 
 
         recyclerContents();
@@ -91,7 +85,7 @@ public class convoActivity extends AppCompatActivity implements View.OnClickList
 
     @Override
     public void onClick(View v) {
-        myList = edtMessage.getText().toString();
+        String myList = edtMessage.getText().toString();
         switch (v.getId()) {
             case R.id.video:
                 Toast.makeText(this, "Video Calling on Progress", Toast.LENGTH_SHORT).show();
@@ -136,7 +130,7 @@ public class convoActivity extends AppCompatActivity implements View.OnClickList
                     rv.post(new Runnable() {
                         @Override
                         public void run() {
-                            rv.smoothScrollToPosition(adapter.getItemCount()-1);
+                            rv.smoothScrollToPosition(adapter.getItemCount() - 1);
                             adapter.notifyDataSetChanged();
                         }
                     });
