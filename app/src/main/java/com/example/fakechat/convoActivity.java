@@ -32,6 +32,7 @@ public class convoActivity extends AppCompatActivity implements View.OnClickList
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        setTheme(android.R.style.Theme_DeviceDefault_Dialog_NoActionBar);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_convo);
 
